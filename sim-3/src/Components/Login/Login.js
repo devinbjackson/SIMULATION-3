@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import axios from 'axios'
 
 import './Login.css'
 
@@ -17,11 +17,10 @@ class Login extends Component {
   }
 
   handleClick(){
-    axios.get('http://localhost:3001/api/test').then(response => console.log(response));
+    window.location.href = 'http://localhost:3001/login'
   }
 
   render() {
-      console.log(this.state)
     return (
     <div id='background'>
         <div id='center-block'>
