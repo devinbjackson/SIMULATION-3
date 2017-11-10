@@ -1,19 +1,21 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:sim-3/src/Login.js
+import "./Login.css";
+=======
 
 
 import './Login.css'
 
+>>>>>>> master:sim-3/src/Components/Login/Login.js
 
 class Login extends Component {
   constructor() {
     super();
 
     this.state = {
-      username: 'abc',
-      password: '123'
+      username: "abc",
+      password: "123"
     };
-
-
   }
 
   handleClick(){
@@ -21,7 +23,7 @@ class Login extends Component {
   }
 
   render() {
-      console.log(this.state)
+    console.log(this.state);
     return (
     <div id='background'>
         <div id='center-block'>
@@ -29,8 +31,8 @@ class Login extends Component {
             <div id='helo'>Helo</div>
             <div id='button' onClick={this.handleClick}>Login / Register</div>
         </div>
-    </div>
-    )
+      </div>
+    );
   }
 }
 
