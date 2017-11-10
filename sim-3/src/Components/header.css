@@ -1,0 +1,34 @@
+#header-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  background-image: linear-gradient(97deg, #ff7a6e, #ff9770);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#header-container img {
+  height: 30px;
+  padding-top: 20px;
+}
+
+#Helo {
+  padding-left: 10vw;
+  font-style: bold;
+}
+#home {
+  padding-left: 1vw;
+  margin-top: 3px;
+}
+#search {
+  padding-left: 1vw;
+  margin-top: 3px;
+}
+#dashboard {
+  padding-left: 25vw;
+  padding-top: 12px;
+}
+#logout {
+  padding-left: 35vw;
+  padding-top: 12px;
+}
