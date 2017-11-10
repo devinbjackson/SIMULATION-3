@@ -69,7 +69,7 @@ passport.deserializeUser(function(obj, done) {
 })
 
 app.get(
-    '/login', passport.authenticate('auth0', {successRedirect: 'http://localhost:3000/'})
+    '/login', passport.authenticate('auth0', {successRedirect: 'http://localhost:3000/dashboard'})
 )
 
 

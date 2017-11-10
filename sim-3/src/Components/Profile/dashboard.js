@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Components/header";
+import Header from "../../Components/header";
 import ('./dashboard.css');
 
 class Dashboard extends Component {
@@ -14,7 +14,7 @@ class Dashboard extends Component {
           <h3 id="last-name">Lemire</h3>
           <button id="edit-button">Edit Profile</button>
         </div>
-        <div id"helo-info">
+        <div id="helo-info">
           <p>Welcome to Helo! Find recommended friends based on your similarities, and even search for them by name.  The more you update your profile, the better recommendations we can make!</p>
         </div>
       </div>
