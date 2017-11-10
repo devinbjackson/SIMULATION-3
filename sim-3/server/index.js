@@ -14,6 +14,9 @@ const { connectionString } = require('../config').massive;
 const port = 3001;
 const app = express();
 
+app.use(json());
+app.use(cors());
+
 
 //MASSIVE
 massive(connectionString)
@@ -25,7 +28,15 @@ massive(connectionString)
 //app.use(express.static(`${__dirname}/public/build`));
 //
 
-
+app.get("/api/test", (req, res, next) => {
+    req.app
+    .get('db')
+    .getUsers()
+    .then(response => {
+      res.json(response);
+    })
+    .catch(console.log)
+})
 
 
 //LISTENING
