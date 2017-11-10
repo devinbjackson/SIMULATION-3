@@ -1,0 +1,1 @@
+INSERT INTO helousers (authid) VALUES ($1);

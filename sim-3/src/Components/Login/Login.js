@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-<<<<<<< HEAD:sim-3/src/Login.js
-import "./Login.css";
-=======
+
+import axios from 'axios'
 
 
 import './Login.css'
-
->>>>>>> master:sim-3/src/Components/Login/Login.js
 
 class Login extends Component {
   constructor() {
@@ -19,7 +16,7 @@ class Login extends Component {
   }
 
   handleClick(){
-    axios.get('http://localhost:3001/api/test').then(response => console.log(response));
+    window.location.href = 'http://localhost:3001/login'
   }
 
   render() {

@@ -8,20 +8,70 @@ const passport = require('passport');
 const Auth0Strategy = require("passport-auth0");
 
 const { connectionString } = require('../config').massive;
+const { domain, clientID, clientSecret } = require('../config').auth0
 
 
 
 const port = 3001;
 const app = express();
 
-app.use(json());
-app.use(cors());
 
 
 //MASSIVE
 massive(connectionString)
 .then(db => app.set('db', db))
 .catch(console.log);
+
+
+app.use(json());
+app.use(cors());
+
+
+app.use( passport.initialize() )
+app.use( passport.session() )
+
+passport.use( 
+    new Auth0Strategy(
+  {
+    domain,
+    clientID,
+    clientSecret,
+    callbackURL: "/login"
+  },
+  function(accessToken, refreshToken, extraParams, profile, done) {
+    
+    app.get('db').getUserByAuthId([profile.id]).then(response => {
+        console.log(response)
+
+        if(!response[0]) {
+            console.log(profile.id)
+            app.get('db').createUserByAuthId([profile.id])
+            .then(created => {
+                return done(null, created[0])
+            }).catch(console.log)
+        } else {
+            console.log(response[0])
+            return done(null, response[0])
+        }
+    })
+
+
+    return done(null, profile);
+  }
+));
+
+passport.serializeUser(function(user, done) {
+    done(null, user)
+})
+
+passport.deserializeUser(function(obj, done) {
+    done(null, obj)
+})
+
+app.get(
+    '/login', passport.authenticate('auth0', {successRedirect: 'http://localhost:3000/dashboard'})
+)
+
 
 
 //SAVED FOR BUILD
