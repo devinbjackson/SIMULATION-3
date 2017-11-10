@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Header from "./Components/header.js";
 import "./App.css";
 
+import router from '../../router.js'
+
 class App extends Component {
+
   render() {
-    return <Header />;
+    return (
+      <div className="App">
+        { router }
+      </div>
+    )
   }
+
 }
 
 export default App;
