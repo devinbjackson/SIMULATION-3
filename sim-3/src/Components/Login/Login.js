@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-<<<<<<< HEAD:sim-3/src/Login.js
+
 import "./Login.css";
-=======
-
-
-import './Login.css'
-
->>>>>>> master:sim-3/src/Components/Login/Login.js
 
 class Login extends Component {
   constructor() {
@@ -21,11 +15,11 @@ class Login extends Component {
   render() {
     console.log(this.state);
     return (
-    <div id='background'>
-        <div id='center-block'>
-            <img src={require("../../Images/logo.png")} alt="Helo Logo"></img>
-            <div id='helo'>Helo</div>
-            <div id='button'>Login / Register</div>
+      <div id="background">
+        <div id="center-block">
+          <img src={require("../../Images/logo.png")} alt="Helo Logo" />
+          <div id="helo">Helo</div>
+          <div id="button">Login / Register</div>
         </div>
       </div>
     );
