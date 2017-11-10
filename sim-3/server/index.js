@@ -29,9 +29,7 @@ massive(connectionString)
 //
 
 app.get("/api/test", (req, res, next) => {
-    req.app
-    .get('db')
-    .getUsers()
+    req.app.get('db').getUsers()
     .then(response => {
       res.json(response);
     })

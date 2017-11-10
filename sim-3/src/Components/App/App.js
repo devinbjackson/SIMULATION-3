@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import Header from "./Components/header.js";
 import "./App.css";
 
+import router from '../../router.js'
+
 class App extends Component {
+
   render() {
-    return <Header />;
+    return (
+      <div className="App">
+        { router }
+      </div>
+    )
   }
+
 }
 
 export default App;

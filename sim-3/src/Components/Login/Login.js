@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+
+
 import './Login.css'
 
 
@@ -24,7 +25,7 @@ class Login extends Component {
     return (
     <div id='background'>
         <div id='center-block'>
-            <img src=""></img>
+            <img src={require("../../Images/logo.png")} alt="Helo Logo"></img>
             <div id='helo'>Helo</div>
             <div id='button' onClick={this.handleClick}>Login / Register</div>
         </div>
